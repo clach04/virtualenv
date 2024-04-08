@@ -149,7 +149,7 @@ def _run_subprocess(cls, exe, app_data, env):
         result = cls._from_json(out)
         result.executable = exe  # keep original executable as this may contain initialization code
     else:
-        msg = f"{exe} with code {code}{f' out: {out!r}' if out else ''}{f' err: {err!r}' if err else ''}"
+        msg = f"{exe} with code {code}{f' out: {out!r}' if out else ''}{f" err: {err!r}" if err else ''}"
         failure = RuntimeError(f"failed to query {msg}")
     return failure, result
 
